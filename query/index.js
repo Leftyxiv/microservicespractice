@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const axios = require('axios');
 
 const app = express();
 app.use(express.json());
@@ -40,7 +41,7 @@ app.post('/events', (req, res) => {
 app.listen(9002, async ()=> {
   console.log('query listening on 9002')
 
-  const res await axios.get('http://localhost:4005/events');
+  const res = await axios.get('http://localhost:9005/events');
   for (let event of res.data){
     console.log('processing event', event.type)
     handleEvent(event.type, event.data);
