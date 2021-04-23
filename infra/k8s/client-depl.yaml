@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: leftyxiv/client
+          image: leftyxiv/client:latest
 ---
 apiVersion: v1
 kind: Service

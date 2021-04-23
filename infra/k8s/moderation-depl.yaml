@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: leftyxiv/moderation
+          image: leftyxiv/moderation:latest
 ---
 apiVersion: v1
 kind: Service
