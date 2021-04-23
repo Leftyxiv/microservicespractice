@@ -39,7 +39,7 @@ app.post('/events', (req, res) => {
 })
 
 app.listen(9002, async ()=> {
-  console.log('query listening on 9002')
+  console.log('query listening on 9002,')
 
   const res = await axios.get('http://events-srv:9005/events');
   for (let event of res.data){

@@ -8,7 +8,7 @@ const PostCreate = () => {
   const onSubmit = async (evt) => {
     evt.preventDefault();
 
-    await axios.post('http://localhost:9000/posts', {
+    await axios.post('http://posts.com/posts/create', {
       title: input
     });
     setInput('');

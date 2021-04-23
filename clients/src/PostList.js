@@ -8,7 +8,7 @@ const PostList = () => {
   const [posts, setPosts] = useState({});
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:9002/posts");
+    const res = await axios.get("http://posts.com/posts");
     setPosts(res.data);
   };
   useEffect(() => {
@@ -17,11 +17,11 @@ const PostList = () => {
 
   const renderedPosts = Object.values(posts).map((post) => {
     return (
-      <div key={post.id} className="card" style={{ width: "30%", marginBottom: "20px" }}>
+      <div className="card" style={{ width: "30%", marginBottom: "20px" }} key={post.id}>
         <div className="card-body">
           <h3>{post.title}</h3>
           <CommentList comments={post.comments} />
-          <CommentCreate id={post.id} />
+          <CommentCreate postId={post.id} />
         </div>
       </div>
     );

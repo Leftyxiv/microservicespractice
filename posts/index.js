@@ -13,7 +13,7 @@ app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-app.post("/posts", async (req, res) => {
+app.post("/posts/create", async (req, res) => {
   const id = nanoid();
   const { title } = req.body;
 
@@ -35,6 +35,6 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(9000, () => {
-  console.log("LOVE LAUGH LIVE");
+  console.log("LOVE LAUGH LIVE SMILE");
   console.log(`listening for posts on 9000`);
 });
