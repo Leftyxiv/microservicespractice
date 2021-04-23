@@ -1,7 +1,7 @@
 const express = require("express");
 const { nanoid } = require("nanoid");
 const cors = require("cors");
-const axios = require('axios');
+const axios = require("axios");
 
 const app = express();
 app.use(express.json());
@@ -21,23 +21,20 @@ app.post("/posts", async (req, res) => {
     id,
     title,
   };
-  
-  await axios.post('http://localhost:9005/events', {
-    type: 'PostCreated',
-    data: posts[id]
-  })
+
+  await axios.post("http://localhost:9005/events", {
+    type: "PostCreated",
+    data: posts[id],
+  });
   res.status(201).send(posts[id]);
 });
 
-
-app.post('/events', (req, res) => {
-  console.log('received event', req.body.type);
+app.post("/events", (req, res) => {
+  console.log("received event", req.body.type);
   res.send({});
-})
-
-
-
+});
 
 app.listen(9000, () => {
+  console.log("LOVE LAUGH LIVE");
   console.log(`listening for posts on 9000`);
 });
